@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Energieprofile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-sliding *ngFor="let profile of profiles">
+    <ion-item (click)="showProfile(profile)" detail="true">
+      {{ profile.name }}
+    </ion-item>
+    <ion-item-options>
+      <ion-item-option color="danger" (click)="delete(profile)">
+        <ion-icon slot="start" name="trash"></ion-icon>
+        Löschen
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addProfile()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

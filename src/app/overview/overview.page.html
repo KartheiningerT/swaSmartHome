@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Datum</ion-label>
+      <ion-datetime [value]="selectedDate" *ngIf="dayView" displayFormat="DD.MM.YYYY" [pickerOptions]="pickerOptions" [max]="maxDate"></ion-datetime>
+      <ion-datetime [value]="selectedDate" *ngIf="!dayView" displayFormat="MMMM" [pickerOptions]="pickerOptions" [max]="maxDate" [monthNames]="monthNames"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <canvas *ngIf="lineChartData" baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+  [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+  [plugins]="lineChartPlugins"></canvas>
+</ion-content>

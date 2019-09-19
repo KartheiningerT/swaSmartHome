@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profil erstellen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Datum</ion-label>
+      <ion-datetime displayFormat="DD.MM.YYYY" [pickerOptions]="pickerOptions" [value]="selectedDate" [max]="maxDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item *ngFor="let d of data">
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>
+        {{ d[0] }} Uhr - {{ d[1] }} kw/h
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="save()">
+      <ion-icon name="checkmark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

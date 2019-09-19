@@ -1,0 +1,7 @@
+{
+  "name": "swa Smart Home",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

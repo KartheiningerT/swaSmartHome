@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tagesverlauf
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <canvas *ngIf="lineChartData" baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+  [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+  [plugins]="lineChartPlugins"></canvas>
+</ion-content>
